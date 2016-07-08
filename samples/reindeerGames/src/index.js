@@ -575,10 +575,20 @@ function handleGetHelpRequest(intent, session, callback) {
     // if there is one in progress, or provide the option to start another one.
 
     // Set a flag to track that we're in the Help state.
-    session.attributes.userPromptedToContinue = true;
-
+  //  Changes to logic to resolve new certification test cases
+  // Help intent now checks to see if a game is in progress before providing help, else it will prompt to start new game
+    var gameInProgress = session.attributes;
+    var sessionAttributes = {};
+    if (!gameInProgress) {
+        // If the user asked for help but there is no game in progress, ask the user
+        // if they want to start a new game. Set a flag to track that we've prompted the user.
+        sessionAttributes.userPromptedToContinue = true;
+        speechOutput = "There is no game in progress. Do you want to start a new game? ";
+        callback(sessionAttributes,
+            buildSpeechletResponse(CARD_TITLE, speechOutput, speechOutput, false));
+    } else if (gameInProgress) {
+    session.attributes.userPromptedToContinue = true
     // Do not edit the help dialogue. This has been created by the Alexa team to demonstrate best practices.
-
     var speechOutput = "I will ask you " + GAME_LENGTH + " multiple choice questions. Respond with the number of the answer. "
         + "For example, say one, two, three, or four. To start a new game at any time, say, start game. "
         + "To repeat the last question, say, repeat. "
@@ -588,6 +598,7 @@ function handleGetHelpRequest(intent, session, callback) {
         var shouldEndSession = false;
     callback(session.attributes,
         buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession));
+    }
 }
 
 function handleFinishSessionRequest(intent, session, callback) {
@@ -649,4 +660,3 @@ function buildResponse(sessionAttributes, speechletResponse) {
         response: speechletResponse
     };
 }
-

@@ -28,7 +28,7 @@ var questions = [
     {
         "What is A L?": [
             "aluminum"
-            
+
         ]
     },
     {
@@ -493,10 +493,20 @@ function handleGetHelpRequest(intent, session, callback) {
     // if there is one in progress, or provide the option to start another one.
 
     // Set a flag to track that we're in the Help state.
-    session.attributes.userPromptedToContinue = true;
-
+  //  Changes to logic to resolve new certification test cases
+  // Help intent now checks to see if a game is in progress before providing help, else it will prompt to start new game
+    var gameInProgress = session.attributes;
+    var sessionAttributes = {};
+    if (!gameInProgress) {
+        // If the user asked for help but there is no game in progress, ask the user
+        // if they want to start a new game. Set a flag to track that we've prompted the user.
+        sessionAttributes.userPromptedToContinue = true;
+        speechOutput = "There is no game in progress. Do you want to start a new game? ";
+        callback(sessionAttributes,
+            buildSpeechletResponse(CARD_TITLE, speechOutput, speechOutput, false));
+    } else if (gameInProgress) {
+    session.attributes.userPromptedToContinue = true
     // Do not edit the help dialogue. This has been created by the Alexa team to demonstrate best practices.
-
     var speechOutput = "I will ask you to provide the name of a, element in the periodic table. I will provide the abbreviation, you will need to provide the name. "
         + "For example, If the element is A R, you would say Argon. To start a new game at any time, say, start new game. "
         + "To repeat the last element, say, repeat. "
@@ -506,6 +516,7 @@ function handleGetHelpRequest(intent, session, callback) {
         var shouldEndSession = false;
     callback(session.attributes,
         buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession));
+    }
 }
 
 function handleFinishSessionRequest(intent, session, callback) {
