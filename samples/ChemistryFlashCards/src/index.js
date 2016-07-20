@@ -430,7 +430,7 @@ function handleAnswerRequest(intent, session, callback) {
 
         var speechOutputAnalysis = "";
 
-        if (answerSlotValid && intent.slots.Answer.value == correctAnswerText) {
+        if (answerSlotValid && intent.slots.Answer.value.toLowerCase() === correctAnswerText.toLowerCase()) {
             currentScore++;
             speechOutputAnalysis = "correct. ";
         } else {
@@ -501,7 +501,12 @@ function handleGetHelpRequest(intent, session, callback) {
         // If the user asked for help but there is no game in progress, ask the user
         // if they want to start a new game. Set a flag to track that we've prompted the user.
         sessionAttributes.userPromptedToContinue = true;
-        speechOutput = "There is no game in progress. Do you want to start a new game? ";
+        speechOutput = "I will ask you to provide the name of a, element in the periodic table. I will provide the abbreviation, you will need to provide the name. "
+            + "For example, If the element is A R, you would say Argon. To start a new game at any time, say, start new game. "
+            + "To repeat the last element, say, repeat. "
+            + "Would you like to start playing?",
+            repromptText = "To give an answer, respond with the correct element. "
+            + "Would you like to start playing?";
         callback(sessionAttributes,
             buildSpeechletResponse(CARD_TITLE, speechOutput, speechOutput, false));
     } else if (gameInProgress) {

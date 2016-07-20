@@ -9,7 +9,7 @@
  */
 
 /**
- * This sample shows how to create a simple Trivia skill with a multiple choice format. The skill
+ * This sample shows how to create a simple Flash Card skill. The skill
  * supports 1 player at a time, and does not support games across sessions.
  */
 
@@ -18,250 +18,115 @@
 /**
  * When editing your questions pay attention to your punctuation. Make sure you use question marks or periods.
  * Make sure the first answer is the correct one. Set at least 4 answers, any extras will be shuffled in.
+ * Make sure Pronouns are Capitlized
  */
 var questions = [
     {
-        "Reindeer have very thick coats, how many hairs per square inch do they have?": [
-            "13,000",
-            "1,200",
-            "5,000",
-            "700",
-            "1,000",
-            "120,000"
+        "Who originally developed DOOM?": [
+            "john carmack"
         ]
     },
     {
-        "The 1964 classic Rudolph The Red Nosed Reindeer was filmed in:": [
-            "Japan",
-            "United States",
-            "Finland",
-            "Germany"
+        "Who developed Super Mario Brothers?": [
+            "shigeru miyamoto"
+
         ]
     },
     {
-        "Santas reindeer are cared for by one of the Christmas elves, what is his name?": [
-            "Wunorse Openslae",
-            "Alabaster Snowball",
-            "Bushy Evergreen",
-            "Pepper Minstix"
+        "Who designed Neverwinter Nights, the first graphical MMORPG?": [
+            "don daglow"
         ]
     },
     {
-        "If all of Santas reindeer had antlers while pulling his Christmas sleigh, they would all be:": [
-            "Girls",
-            "Boys",
-            "Girls and boys",
-            "No way to tell"
+        "Who Created Ultima?": [
+            "richard garriott"
         ]
     },
     {
-        "What do Reindeer eat?": [
-            "Lichen",
-            "Grasses",
-            "Leaves",
-            "Berries"
+        "Who is the well known co-founder of Valve Studios?": [
+            "gabe newell"
+        ]
+    },
+  /*  {
+        "Who created the Civilization series?": [
+            "sid meier"
+        ]
+    }, */
+    {
+        "Who was the original programmer for Atari 2600?": [
+            "alan miller"
+        ]
+    },
+  /**  {
+        "Who Created Minecraft?": [
+            "markus persson"
+        ]
+    }, */
+    {
+        "Who Programmed Commander Keen?": [
+            "john romero"
         ]
     },
     {
-        "What of the following is not true?": [
-            "Caribou live on all continents",
-            "Both reindeer and Caribou are the same species",
-            "Caribou are bigger than reindeer",
-            "Reindeer live in Scandinavia and Russia"
+        "Who founded Epic Games?": [
+            "tim sweeney"
         ]
     },
     {
-        "In what year did Rudolph make his television debut?": [
-            "1964",
-            "1979",
-            "2000",
-            "1956"
+        "Who Programmed the original SIM City?": [
+            "will wright"
         ]
     },
     {
-        "Who was the voice of Rudolph in the 1964 classic?": [
-            "Billie Mae Richards",
-            "Burl Ives",
-            "Paul Soles",
-            "Lady Gaga"
+        "Who Created Braid?": [
+            "johnathan blow"
         ]
     },
     {
-        "In 1939 what retailer used the story of Rudolph the Red Nose Reindeer?": [
-            "Montgomery Ward",
-            "Sears",
-            "Macys",
-            "Kmart"
+        "Who was the producer for Crash Bandicoot??": [
+            "mark cerny"
         ]
     },
     {
-        "Santa's reindeer named Donner was originally named what?": [
-            "Dunder",
-            "Donny",
-            "Dweedle",
-            "Dreamy"
+        "Who was the creative director for The Last of Us?": [
+            "neil druckman"
         ]
     },
     {
-        "Who invented the story of Rudolph?": [
-            "Robert May",
-            "Johnny Marks",
-            "Santa",
-            "J.K. Rowling"
+        "Who is the creator of the Twisted Metal Series?": [
+            "David Jaffe"
         ]
     },
     {
-        "In what location will you not find reindeer?": [
-            "North Pole",
-            "Lapland",
-            "Korvatunturi mountain",
-            "Finland"
+        "Who founded Bungie Games, creator of the HALO series?": [
+            "alex seropian"
         ]
     },
     {
-        "What Makes Santa's Reindeer Fly?": [
-            "Magical Reindeer Dust",
-            "Fusion",
-            "Amanita muscaria",
-            "Elves"
+        "Who created Pong?": [
+            "allan alcorn"
         ]
     },
     {
-        "Including Rudolph, how many reindeer hooves are there?": [
-            "36",
-            "24",
-            "16",
-            "8"
+        "Who created Pac-Man?": [
+            "toru iwatani"
         ]
     },
     {
-        "Santa only has one female reindeer. Which one is it?": [
-            "Vixen",
-            "Clarice",
-            "Cupid",
-            "Cupid"
+        "Who created The Legend of Zelda?": [
+            "shigeru miyamoto"
         ]
     },
     {
-        "In the 1964 classic Rudolph The Red Nosed Reindeer, what was the snowman narrators name?": [
-            "Sam",
-            "Frosty",
-            "Burl",
-            "Snowy"
+        "Who created Spacewar, the first computer-based video game?": [
+            "steve russell"
         ]
     },
     {
-        "What was Rudolph's father's name?": [
-            "Donner",
-            "Dasher",
-            "Blixen",
-            "Comet"
+        "Who originally created the game Adventure?": [
+            "william crowther"
         ]
     },
-    {
-        "In the 1964 movie, What was the name of the coach of the Reindeer Games?": [
-            "Comet",
-            "Blixen",
-            "Donner",
-            "Dasher"
-        ]
-    },
-    {
-        "In the 1964 movie, what is the name of the deer that Rudolph befriends at the reindeer games?": [
-            "Fireball",
-            "Clarice",
-            "Jumper",
-            "Vixen"
-        ]
-    },
-    {
-        "In the 1964 movie, How did Donner, Rudolph's father, try to hide Rudolph's nose?": [
-            "Black mud",
-            "Bag",
-            "Pillow case",
-            "Sock"
-        ]
-    },
-    {
-        "In the 1964 movie, what does the Misfit Elf want to be instead of a Santa Elf?": [
-            "Dentist",
-            "Reindeer",
-            "Toy maker",
-            "Candlestick maker"
-        ]
-    },
-    {
-        "In the 1964 movie,what was the Bumble's one weakness?": [
-            "Could not swim",
-            "Always hungry",
-            "Candy canes",
-            "Cross eyed"
-        ]
-    },
-    {
-        "In the 1964 movie, what is Yukon Cornelius really in search of?": [
-            "Peppermint",
-            "Gold",
-            "India",
-            "Polar Bears"
-        ]
-    },
-    {
-        "In the 1964 movie, why is the train on the Island of Misfit Toys?": [
-            "Square wheels",
-            "No Engine",
-            "Paint does not match",
-            "It does not toot"
-        ]
-    },
-    {
-        "In the 1964 movie, what is the name of the Jack in the Box?": [
-            "Charlie",
-            "Sam",
-            "Billy",
-            "Jack"
-        ]
-    },
-    {
-        "In the 1964 movie, why did Santa Claus almost cancel Christmas?": [
-            "Storm",
-            "No snow",
-            "No toys",
-            "The Reindeer were sick"
-        ]
-    },
-    {
-        "In the 1964 movie, what animal noise did the elf make to distract the Bumble?": [
-            "Oink",
-            "Growl",
-            "Bark",
-            "Meow"
-        ]
-    },
-    {
-        "In the 1964 movie, what is the name of the prospector?": [
-            "Yukon Cornelius",
-            "Slider Sam",
-            "Bumble",
-            "Jack"
-        ]
-    },
-    {
-        "How far do reindeer travel when they migrate?": [
-            "3000 miles",
-            "700 miles",
-            "500 miles",
-            "0 miles"
-        ]
-    },
-    {
-        "How fast can a reindeer run?": [
-            "48 miles per hour",
-            "17 miles per hour",
-            "19 miles per hour",
-            "14 miles per hour"
-        ]
-    }
 ];
 
 // Route the incoming request based on type (LaunchRequest, IntentRequest,
@@ -383,14 +248,14 @@ function onSessionEnded(sessionEndedRequest, session) {
 
 // ------- Skill specific business logic -------
 
-var ANSWER_COUNT = 4;
+var ANSWER_COUNT = 1;
 var GAME_LENGTH = 5;
-var CARD_TITLE = "Trivia"; // Be sure to change this for your skill.
+var CARD_TITLE = "Game Devs"; // Be sure to change this for your skill.
 
 function getWelcomeResponse(callback) {
     var sessionAttributes = {},
-        speechOutput = "I will ask you " + GAME_LENGTH.toString()
-            + " questions, try to get as many right as you can. Just say the number of the answer. Let's begin. ",
+        speechOutput = "Let's learn about famous game developers. I will ask you about " + GAME_LENGTH.toString()
+            + " developers, try to get as many right as you can. Just say the name of the developer. Let's begin. ",
         shouldEndSession = false,
 
         gameQuestions = populateGameQuestions(),
@@ -398,13 +263,13 @@ function getWelcomeResponse(callback) {
         roundAnswers = populateRoundAnswers(gameQuestions, 0, correctAnswerIndex),
 
         currentQuestionIndex = 0,
-        spokenQuestion = Object.keys(questions[gameQuestions[currentQuestionIndex]])[0],
-        repromptText = "Question 1. " + spokenQuestion + " ",
+        spokenQuestion = Object.keys(questions[gameQuestions[currentQuestionIndex]]),
+        repromptText = spokenQuestion,
 
         i, j;
 
     for (i = 0; i < ANSWER_COUNT; i++) {
-        repromptText += (i+1).toString() + ". " + roundAnswers[i] + ". "
+        repromptText += ""
     }
     speechOutput += repromptText;
     sessionAttributes = {
@@ -483,6 +348,40 @@ function populateRoundAnswers(gameQuestionIndexes, correctAnswerIndex, correctAn
 }
 
 function handleAnswerRequest(intent, session, callback) {
+    // Get the answers for a given question, and place the correct answer at the spot marked by the
+    // correctAnswerTargetLocation variable. Note that you can have as many answers as you want but
+    // only ANSWER_COUNT will be selected.
+    var answers = [],
+        answersCopy = questions[gameQuestionIndexes[correctAnswerIndex]][Object.keys(questions[gameQuestionIndexes[correctAnswerIndex]])[0]],
+        temp, i;
+
+    var index = answersCopy.length;
+
+    if (index < ANSWER_COUNT){
+        throw "Not enough answers for question.";
+    }
+
+    // Shuffle the answers, excluding the first element.
+    for (var j = 1; j < answersCopy.length; j++){
+        var rand = Math.floor(Math.random() * (index - 1)) + 1;
+        index -= 1;
+
+        var temp = answersCopy[index];
+        answersCopy[index] = answersCopy[rand];
+        answersCopy[rand] = temp;
+    }
+
+    // Swap the correct answer into the target location
+    for (i = 0; i < ANSWER_COUNT; i++) {
+        answers[i] = answersCopy[i];
+    }
+    temp = answers[0];
+    answers[0] = answers[correctAnswerTargetLocation];
+    answers[correctAnswerTargetLocation] = temp;
+    return answers;
+}
+
+function handleAnswerRequest(intent, session, callback) {
     var speechOutput = "";
     var sessionAttributes = {};
     var gameInProgress = session.attributes && session.attributes.questions;
@@ -500,7 +399,7 @@ function handleAnswerRequest(intent, session, callback) {
         // If the user provided answer isn't a number > 0 and < ANSWER_COUNT,
         // return an error message to the user. Remember to guide the user into providing correct values.
         var reprompt = session.attributes.speechOutput;
-        var speechOutput = "Your answer must be a number between 1 and " + ANSWER_COUNT + ". " + reprompt;
+        var speechOutput = "Your answer must be a known developer " + reprompt;
         callback(session.attributes,
             buildSpeechletResponse(CARD_TITLE, speechOutput, reprompt, false));
     } else {
@@ -512,33 +411,33 @@ function handleAnswerRequest(intent, session, callback) {
 
         var speechOutputAnalysis = "";
 
-        if (answerSlotValid && parseInt(intent.slots.Answer.value.toLowerCase()) === correctAnswerIndex.toLowerCase()) {
+        if (answerSlotValid && intent.slots.Answer.value.toLowerCase() === correctAnswerText.toLowerCase()) {
             currentScore++;
             speechOutputAnalysis = "correct. ";
         } else {
             if (!userGaveUp) {
                 speechOutputAnalysis = "wrong. "
             }
-            speechOutputAnalysis += "The correct answer is " + correctAnswerIndex + ": " + correctAnswerText + ". ";
+            speechOutputAnalysis += "The correct answer is " + correctAnswerText + ". ";
         }
         // if currentQuestionIndex is 4, we've reached 5 questions (zero-indexed) and can exit the game session
         if (currentQuestionIndex == GAME_LENGTH - 1) {
             speechOutput = userGaveUp ? "" : "That answer is ";
             speechOutput += speechOutputAnalysis + "You got " + currentScore.toString() + " out of "
-                + GAME_LENGTH.toString() + " questions correct. Thank you for playing!";
+                + GAME_LENGTH.toString() + " questions correct. Thank you for learning about historic game developers!";
             callback(session.attributes,
                 buildSpeechletResponse(CARD_TITLE, speechOutput, "", true));
         } else {
             currentQuestionIndex += 1;
-            var spokenQuestion = Object.keys(questions[gameQuestions[currentQuestionIndex]])[0];
+            var spokenQuestion = Object.keys(questions[gameQuestions[currentQuestionIndex]]);
             // Generate a random index for the correct answer, from 0 to 3
             correctAnswerIndex = Math.floor(Math.random() * (ANSWER_COUNT));
             var roundAnswers = populateRoundAnswers(gameQuestions, currentQuestionIndex, correctAnswerIndex),
 
                 questionIndexForSpeech = currentQuestionIndex + 1,
-                repromptText = "Question " + questionIndexForSpeech.toString() + ". " + spokenQuestion + " ";
+                repromptText =  spokenQuestion ;
             for (var i = 0; i < ANSWER_COUNT; i++) {
-                repromptText += (i+1).toString() + ". " + roundAnswers[i] + ". "
+                repromptText +=  ""
             }
             speechOutput += userGaveUp ? "" : "That answer is ";
             speechOutput += speechOutputAnalysis + "Your score is " + currentScore.toString() + ". " + repromptText;
@@ -580,42 +479,41 @@ function handleGetHelpRequest(intent, session, callback) {
     var gameInProgress = session.attributes;
     var sessionAttributes = {};
     if (!gameInProgress) {
-        // If the user asked for help but there is no game in progress, ask the user
+        // If the user responded with an answer but there is no game in progress, ask the user
         // if they want to start a new game. Set a flag to track that we've prompted the user.
         sessionAttributes.userPromptedToContinue = true;
-        speechOutput = "I will ask you " + GAME_LENGTH + " multiple choice questions. Respond with the number of the answer. "
-            + "For example, say one, two, three, or four. To start a new game at any time, say, start game. "
-            + "To repeat the last question, say, repeat. "
-            + "Would you like to start playing?",
-            repromptText = "To give an answer to a question, respond with the number of the answer . "
-            + "Would you like to start playing?";
+        speechOutput = "I will ask you to provide the name of a famous game developer. I will provide the name of the game, you will need to provide the name of the developer. "
+        + "For example, If the game is Super Mario Brothers, you would say Shigeru Miyamoto. To start a new game at any time, say, start new game. "
+        + "To repeat the last game, say, repeat. "
+        + "Would you like to start playing?",
+         repromptText = "To give an answer, respond with the correct developer. "
+        + "Would you like to start playing?";
         callback(sessionAttributes,
             buildSpeechletResponse(CARD_TITLE, speechOutput, speechOutput, false));
     } else if (gameInProgress) {
     session.attributes.userPromptedToContinue = true
     // Do not edit the help dialogue. This has been created by the Alexa team to demonstrate best practices.
-    var speechOutput = "I will ask you " + GAME_LENGTH + " multiple choice questions. Respond with the number of the answer. "
-        + "For example, say one, two, three, or four. To start a new game at any time, say, start game. "
-        + "To repeat the last question, say, repeat. "
-        + "Would you like to keep playing?",
-        repromptText = "To give an answer to a question, respond with the number of the answer . "
-        + "Would you like to keep playing?";
-        var shouldEndSession = false;
-    callback(session.attributes,
-        buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession));
-    }
-}
+    var speechOutput = "I will ask you to provide the name of a famous game developer. I will provide the name of the game, you will need to provide the name of the developer. "
+    + "For example, If the game is Super Mario Brothers, you would say Shigeru Miyamoto. To start a new game at any time, say, start new game. "
+    + "To repeat the last game, say, repeat. "
+    + "Would you like to keep playing?",
+     repromptText = "To give an answer, respond with the correct developer. "
+    + "Would you like to keep playing?";
+    var shouldEndSession = false;
+callback(session.attributes,
+    buildSpeechletResponseWithoutCard(speechOutput, repromptText, shouldEndSession));
+}}
 
 function handleFinishSessionRequest(intent, session, callback) {
     // End the session with a "Good bye!" if the user wants to quit the game
     callback(session.attributes,
-        buildSpeechletResponseWithoutCard("Good bye!", "", true));
+        buildSpeechletResponseWithoutCard("Thanks for playing Game Devs!", "", true));
 }
 
 function isAnswerSlotValid(intent) {
     var answerSlotFilled = intent.slots && intent.slots.Answer && intent.slots.Answer.value;
     var answerSlotIsInt = answerSlotFilled && !isNaN(parseInt(intent.slots.Answer.value));
-    return answerSlotIsInt && parseInt(intent.slots.Answer.value) < (ANSWER_COUNT + 1) && parseInt(intent.slots.Answer.value) > 0;
+    return 1;
 }
 
 // ------- Helper functions to build responses -------
